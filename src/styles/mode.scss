@@ -1,0 +1,52 @@
+.mode {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0 0 100%;
+  .mode__container {
+    color: #4D5562;
+    background: #F3F4F6;
+    border-radius: 6px;
+    padding: 1px;
+    width: 243px;
+    display: flex;
+  }
+  input {display: none;}
+
+  label {
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    &:before {
+      filter: hue-rotate(-21deg) brightness(80%) saturate(14%);
+    }
+  }
+
+  input#runtime + label {
+    &:before {
+      content: url('./src/assets/eye.svg');
+    }
+  }
+
+  input#constructor + label {
+    &:before {
+      content: url('./src/assets/selector.svg');
+    }
+  }
+
+  input:checked + label {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E3E5;
+
+    &:before {
+      filter: none;
+    }
+  }
+}

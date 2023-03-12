@@ -1,0 +1,115 @@
+.draggable-item[draggable=false] {
+  cursor: url("./src/assets/cursors/notallowed.svg"), no-drop !important;
+}
+
+.palette{
+  .draggable-item {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 4px 6px rgba(0, 0, 0, 0.1);
+    &.opacity {
+      opacity: .4;
+      box-shadow: none;
+    }
+  }
+}
+
+.canvas {
+  &.over__for-display  {
+    position: relative;
+    border-radius: 0;
+    border-top: 1px solid #5D5FEF!important;
+    &:before, &:after {
+      top: -3px;
+      content: "";
+      background-color: #5D5FEF;
+      border-radius: 0;
+      transform: rotate(45deg);
+      height: 5px;
+      width: 5px;
+      position: absolute;
+    }
+    &:before{ left: 0; }
+    &:after { right: 0; }
+  }
+  .draggable-item {
+    &.over, &.over__on-panel {
+      position: relative;
+      border-radius: 0;
+      border-bottom: 1px solid #5D5FEF;
+      &:before, &:after {
+        content: "";
+        background-color: #5D5FEF;
+        border-radius: 0;
+        transform: rotate(45deg);
+        height: 5px;
+        width: 5px;
+        bottom: -3px;
+        position: absolute;
+      }
+      &:before{ left: 0; }
+      &:after { right: 0; }
+    }
+  }
+}
+
+.draggable-item {
+  background-color: #FFFFFF;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  opacity: 1;
+
+  .draggable-item__display{
+    width: 100%;
+    background: #F3F4F6;
+    border-radius: 6px;
+    padding: 4px;
+    p{
+      margin: 0;
+      min-height: 52px;
+      font-weight: 800;
+      font-size: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      &.big__text-size{
+        font-size: 30px;
+      }
+      &.medium__text-size{
+        font-size: 20px;
+      }
+    }
+  }
+
+  .draggable-item__button {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E3E5;
+    border-radius: 6px;
+    text-align: center;
+    flex:  1 1 30%;
+    color: #000000;
+    p{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 15px;
+    }
+    &.computing {
+      flex:  1 1 20%;
+    }
+    &.equals {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      min-height: 64px;
+      border: 1px solid transparent;
+      background-color: #5D5FEF;
+      color: #FFFFFF;
+      p{
+        margin: 0;
+        line-height: 0;
+      }
+    }
+  }
+}
